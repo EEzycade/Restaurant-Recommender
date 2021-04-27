@@ -13,8 +13,22 @@ var initializeApp = function () {
 }
 
 // create function to grab address from form and convert it into latitude and longitude
-var convertAddress = function () {
-    
+var convertAddress = function (e) {
+    e.preventDefault();
+    console.log("working");
+    fetch('http://api.positionstack.com/v1/forward?access_key=ee94f47a6f59bccccb63518da296f930&query=' + userAddress.value + '&output=json')
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response);
+            var latCoordinate = document.createElement("p");
+            latCoordinate.innerHTML = response.data[0].latitude;
+            var lonCoordinate = document.createElement("p");
+            lonCoordinate.innerHTML = response.data[0].longitude;
+            infoContainerEl.append(latCoordinate, lonCoordinate);
+            
+        });
 }
 
 // create function to grab range + preferred cuisine, make a fetch call using range, cuisine, and lat/lon
