@@ -5,33 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
     <title>Document</title>
 </head>
 
 <body>
 
-    <h1>Research Buddy</h1>
+    <h1>Dinner Date Planner</h1>
+    <h4>No more being hangry because you and your partner can't decide on a restaurant. Let us choose for you!</h4>
 
     <form>
-        <label for="search-term">Search keywords:</label>
-        <input type="text" id="search-term" name="search-term" placeholder="example keyword">
-        <input type="submit" value="Submit" id="submit-btn">
+
+        <label for="user-address">Enter your address:</label>
+        <input type="text" id="user-address" name="user-address" placeholder="2355 N Somewhere Ave">
+        <br/>
+        
+        <label for="range-select">Find restaurants within...</label>
+        <select name="range-select" id="range-select">
+            <option disabled selected="true">Choose range</option>
+            <option value="5">5 miles</option>
+            <option value="10">10 miles</option>
+            <option value="15">15 miles</option>
+            <option value="20">20 miles</option>
+            <option value="25">25 miles</option>
+        </select>
+        <br/>
+
+        <button type="submit" id="submit-btn">Submit</button>
+
     </form>
 
     <div id="info-container">
 
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <script src="./assets/js/script.js"></script>
 </body>
