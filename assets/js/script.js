@@ -1,18 +1,51 @@
-var infoContainerEl = document.querySelector("#info-container");
+// define GLOBAL variables
+var userAddress = document.querySelector("#user-address");
+var selectRange = document.querySelector("#range-select");
 var infoSubmitBtn = document.querySelector("#submit-btn");
-var infoSubmitInput = document.querySelector("#search-term");
+var infoContainerEl = document.querySelector("#info-container");
 
 
 
-var createContent = function(e) {
+// create function to trigger app functions
+var initializeApp = function () {
+    convertAddress();
+    getRestaurants();
+}
+
+// create function to grab address from form and convert it into latitude and longitude
+var convertAddress = function () {
+    
+}
+
+// create function to grab range + preferred cuisine, make a fetch call using range, cuisine, and lat/lon
+var getRestaurants = function () {
+
+}
+
+
+// create function to display the restaurant on the page
+var createContent = function (e) {
     e.preventDefault();
-    infoSubmitInput.value = "";
+    userAddress.value = "";
     var infoHeaderEl = document.createElement("h2");
-    infoHeaderEl.innerHTML = "returned json object title";
+    infoHeaderEl.innerHTML = "restaurant name";
     var infoDetailsEl = document.createElement("p");
-    infoDetailsEl.textContent = "returned json object details"
+    infoDetailsEl.textContent = "details: phone #, website link, menu optionss"
     infoContainerEl.append(infoHeaderEl, infoDetailsEl);
 
 }
 
-infoSubmitBtn.addEventListener("click", createContent);
+
+
+
+
+fetch("https://api.documenu.com/v2/restaurants/search/geo?key=337e793c7092becc4d3298568d6964ac&lat=33.445922&lon=-111.774391&distance=5&fullmenu&cuisine=American")
+.then(function(response) {
+    return response.json();
+})
+.then(function (data) {
+    console.log(data);
+})
+
+// on submit, trigger function
+infoSubmitBtn.addEventListener("click", convertAddress);
