@@ -3,6 +3,7 @@ var userAddress = document.querySelector("#user-address");
 var selectRange = document.querySelector("#range-select");
 var infoSubmitBtn = document.querySelector("#submit-btn");
 var infoContainerEl = document.querySelector("#info-container");
+var previousRecommendations = document.querySelector("#previous-recommendations")
 
 // create function to trigger app functions
 var initializeApp = function (e) {
@@ -41,15 +42,50 @@ var getRestaurants = function () {
             // create variable for random restaurant
             var randomChoice = Math.floor(Math.random() * data.data.length);
             console.log(randomChoice);
+            var choice = data.data[randomChoice];
             // display restaurant info on page
             var restaurantName = document.createElement("h2");
-            restaurantName.innerHTML = data.data[randomChoice].restaurant_name;
+            restaurantName.innerHTML = choice.restaurant_name;
             var restaurantPhone = document.createElement("h2");
-            restaurantPhone.innerHTML = data.data[randomChoice].restaurant_phone
-            var restaurantSite = document.createElement("h2");
-            restaurantSite.innerHTML = data.data[randomChoice].restaurant_website;
-            infoContainerEl.append(restaurantName, restaurantPhone, restaurantSite);
+            restaurantPhone.innerHTML = choice.restaurant_phone
+            var restaurantAddress = document.createElement("h2");
+            restaurantAddress.innerHTML = choice.address.street;
+            var saveRecBtn = document.createElement("button");
+            saveRecBtn.innerHTML = "Save this recommendation for later";
+            var nextRecBtn = document.createElement("button");
+            nextRecBtn.innerHTML = "Next recommendation";
+            infoContainerEl.append(restaurantName, restaurantPhone, restaurantAddress, saveRecBtn, nextRecBtn);
+            var recommendationObject = {
+                name: choice.restaurant_name,
+                phone: choice.restaurant_phone,
+                address: choice.address.street
+            };
+            localStorage.setItem("previousRec", JSON.stringify(recommendationObject));
+            saveRecBtn.addEventListener("click", populatePreviousRecs);
+            nextRecBtn.addEventListener("click", searchAgain);
+
         })
+}
+
+// create function to search again
+var searchAgain = function() {
+    infoContainerEl.innerHTML = "";
+    getRestaurants();
+}
+
+// create function to put recommendation in sidebar
+var populatePreviousRecs = function() {
+    var recommendationObject = JSON.parse(localStorage.getItem("previousRec"));
+    var recommendationCard = document.createElement("div");
+    var previousRecName = document.createElement("h3");
+    previousRecName.innerHTML = recommendationObject.name;
+    var previousRecPhone = document.createElement("h3");
+    previousRecPhone.innerHTML = recommendationObject.phone;
+    var previousRecAddress = document.createElement("h3");
+    previousRecAddress.innerHTML = recommendationObject.address;
+    recommendationCard.append(previousRecName, previousRecPhone, previousRecAddress);
+    infoContainerEl.appendChild(recommendationCard);
+    
 }
 
 // on submit, trigger function
