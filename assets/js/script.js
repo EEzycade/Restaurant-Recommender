@@ -8,6 +8,7 @@ var previousRecommendations = document.querySelector("#previous-recommendations"
 // create function to trigger app functions
 var initializeApp = function (e) {
     e.preventDefault();
+    infoContainerEl.innerHTML = "";
     convertAddress();
     getRestaurants();
 }
@@ -84,7 +85,7 @@ var populatePreviousRecs = function() {
     var previousRecAddress = document.createElement("h3");
     previousRecAddress.innerHTML = recommendationObject.address;
     recommendationCard.append(previousRecName, previousRecPhone, previousRecAddress);
-    infoContainerEl.appendChild(recommendationCard);
+    previousRecommendations.appendChild(recommendationCard);
     
 }
 
