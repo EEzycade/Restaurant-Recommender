@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/f2ca1fbec1.js" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.6.0/dist/cirrus.min.css"/> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/cirrus.min.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <!-- added responsive viewport meta tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- added Font Awesome to use icons -->
-    <script src="https://kit.fontawesome.com/f2ca1fbec1.js" crossorigin="anonymous"></script>
-
-    <title>Dinner Date Planner</title>
-</head>
-        
-<body>
-    <div class="container">
-
+    <title>You Pick!</title>
     
+  </head>
 
-    <h1>Dinner Date Planner</h1>
-    <h4>No more being hangry because you and your partner can't decide on a restaurant. Let us choose for you!</h4>
+  <body>
+    <div class="container">
+      <h1>Dinner Date Planner</h1>
+      <h4>
+        No more being hangry because you and your partner can't decide on a
+        restaurant. Let us choose for you!
+      </h4>
 
-    <form>
-
+      <form>
         <label for="user-address">Enter your address:</label>
-        <input type="text" id="user-address" name="user-address" placeholder="2355 N Somewhere Ave">
-        <br/>
-        
+        <input
+          type="text"
+          id="user-address"
+          name="user-address"
+          placeholder="2355 N Somewhere Ave"
+        />
+        <br />
+
         <label for="range-select">Find restaurants within...</label>
         <select name="range-select" id="range-select">
-            <option disabled selected="true">Choose range</option>
-            <option value="5">5 miles</option>
-            <option value="10">10 miles</option>
-            <option value="15">15 miles</option>
-            <option value="20">20 miles</option>
-            <option value="25">25 miles</option>
+          <option disabled selected="true">Choose range</option>
+          <option value="5">5 miles</option>
+          <option value="10">10 miles</option>
+          <option value="15">15 miles</option>
+          <option value="20">20 miles</option>
+          <option value="25">25 miles</option>
         </select>
-        <br/>
+        <br />
 
         <button type="submit" id="submit-btn">Submit</button>
+      </form>
 
-    </form>
-
-    <div id="info-container">
-
+      <div id="info-container"></div>
     </div>
-</div>
-<!--Materialize has their script.js  anyone know if we must use theirs or if we can use the one we are using
-    JavaScript at end of body for optimized loading-->
-<!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    
     <script src="./assets/js/script.js"></script>
-</body>
-
+  </body>
 </html>
