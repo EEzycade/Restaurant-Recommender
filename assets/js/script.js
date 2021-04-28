@@ -44,7 +44,7 @@ var createContent = function (e) {
     var infoHeaderEl = document.createElement("h2");
     infoHeaderEl.innerHTML = "restaurant name";
     var infoDetailsEl = document.createElement("p");
-    infoDetailsEl.textContent = "details: phone #, website link, menu optionss"
+    infoDetailsEl.textContent = "details: phone #, website link, menu options"
     infoContainerEl.append(infoHeaderEl, infoDetailsEl);
 
 }
