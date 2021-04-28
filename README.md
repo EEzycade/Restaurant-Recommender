@@ -7,6 +7,7 @@ It's a discussion we've all had, be it with our family, partner, or spouse.
 * HTML
 * CSS
 * Javascript
+* Cirrus
 * Documenu API
 * positionstack API
 
