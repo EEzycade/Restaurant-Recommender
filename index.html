@@ -1,50 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://kit.fontawesome.com/f2ca1fbec1.js" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.6.0/dist/cirrus.min.css"/> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/cirrus.min.css" />
+    <title>Restaurant Randomizer</title>
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous"> -->
-    <title>Document</title>
-</head>
 
-<body>
+  <body>
+    <!-- <div class="img-stretch" style="background:transparent; background-image:url(/Users/christicurrier/Desktop/Projects/Project01-RestaurantChooser/assets/images/meal_wood_background.jpeg);" -->
+ 
+        <div class="u-flex img-stretch" style="background: transparent; background-image: url(/Users/christicurrier/Desktop/Projects/Project01-RestaurantChooser/assets/images/meal_wood_background.jpeg); background-size: cover;">
 
-    <h1>Dinner Date Planner</h1>
-    <h4>No more being hangry because you and your partner can't decide on a restaurant. Let us choose for you!</h4>
-
-    <form>
-
-        <label for="user-address">Enter your address:</label>
-        <input type="text" id="user-address" name="user-address" placeholder="2355 N Somewhere Ave">
-        <br/>
-        
-        <label for="range-select">Find restaurants within...</label>
-        <select name="range-select" id="range-select">
-            <option disabled selected="true">Choose range</option>
-            <option value="5">5 miles</option>
-            <option value="10">10 miles</option>
-            <option value="15">15 miles</option>
-            <option value="20">20 miles</option>
-            <option value="25">25 miles</option>
-        </select>
-        <br/>
-
-        <button type="submit" id="submit-btn">Submit</button>
-
-    </form>
-
-    <div id="info-container">
-
+    <div class="grid grid-gap-3 u-text-center">
+      <div class="grid-c-8 grid-r-5" style="background:  transparent; border-radius: .25rem;">
+        <h1 class="uppercase color: white"> <b></b></h1>
+      
     </div>
+    
+        <div class="grid-c-8 grid-r-4" style="background:  transparent; border-radius: .25rem;">
+            <h1 class="uppercase color: white"> <b>Restaurant Randomizer</b></h1>
+          
+        </div>
+        
+        <div class="grid-c-7 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+            <h4><b> No more being hangry because you and your partner can't 
+              decide on a restaurant. Let us choose for you!</b></p>
+        </div>
+        <div class="grid-c-6 grid-r-12" style="background: transparent; color: #fff; border-radius: .25rem;">
+            <h4><b>Saved Suggestions</b></p>
+        </div>
+        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+          <h4><b></b></p>
+      </div>
+        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+          <h4><b><label for="user-address">Enter your address:</label></b></p>
+            <input
+          type="text"
+          id="user-address"
+          name="user-address"
+          placeholder="2355 N Somewhere Ave City ST"
+        />
+        </div>
+        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+            <label for="range-select">Find restaurants within...</label>
+        <select name="range-select" id="range-select">
+          <option disabled selected="true">Choose range</option>
+          <option value="5">5 miles</option>
+          <option value="10">10 miles</option>
+          <option value="15">15 miles</option>
+          <option value="20">20 miles</option>
+          <option value="25">25 miles</option>
+        </select>
+        <br />
+
+        <button class="btn-animated" type="submit" id="submit-btn">Submit</button>
+        </div>
+        <div class="grid-c-12" style="background: transparent; color: #fff; border-radius: .25rem;">
+            <p><b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b></p>
+        </div>
+    </div>
+
+      <div id="info-container"></div>
+    </div>
+    
+
 
     <div id="previous-recommendations">
         
     </div>
 
-    <script src="./assets/js/script.js"></script>
-</body>
 
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
