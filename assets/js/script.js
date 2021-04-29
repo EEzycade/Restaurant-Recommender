@@ -92,6 +92,4 @@ var populatePreviousRecs = function() {
 
 
 // on submit, trigger function
-infoSubmitBtn.addEventListener("click", initializeApp);
-
-
+infoSubmitBtn.addEventListener("click", initializeApp)
