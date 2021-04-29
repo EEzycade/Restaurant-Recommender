@@ -4,6 +4,7 @@ var selectRange = document.querySelector("#range-select");
 var infoSubmitBtn = document.querySelector("#submit-btn");
 var infoContainerEl = document.querySelector("#info-container");
 var previousRecommendations = document.querySelector("#previous-recommendations")
+var 
 
 // create function to trigger app functions
 var initializeApp = function (e) {
@@ -91,3 +92,13 @@ var populatePreviousRecs = function() {
 
 // on submit, trigger function
 infoSubmitBtn.addEventListener("click", initializeApp);
+
+// on esc press close = accessibility
+document.addEventListener('keyup', function(e) {
+    if(e.key === "Escape") {
+        const modals = document.querySelectorAll('.modal-overlay');
+        for (const modal of modals) {
+            modal.click();
+        }
+    }
+});

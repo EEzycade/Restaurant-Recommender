@@ -38,7 +38,7 @@
           <h4><b></b></p>
       </div>
         <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b><label for="user-address">Enter your address:</label></b></p>
+          <h4><b><label for="user-address">Enter your address:</label></b>
             <input
           type="text"
           id="user-address"
@@ -59,65 +59,28 @@
         <br/>
         <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
           <h4><b></b></p>
-        <button class="btn-animated" type="submit" id="submit-btn">Submit</button>
+        <button onclick="getRestaurants()" class="btn-animated" type="submit" id="submit-btn">Submit</button>
         </div>
+        utton onclick="getRestaurants()"
+        //modal to display recommendation
+        <div>
+        <div class="modal" id="test-modal">
+          <div class="modal-header">
+              <a href="#anchor-to-background" class="u-pull-right" aria-label="Close">
+                  <span class="icon">
+                      <i class="fa-wrapper fa fa-times></i>
+                  </span>
+              </a>
+          </div>
+      </div>
         <div class="grid-c-12" style="background: transparent; color: #fff; border-radius: .25rem;">
             <p><b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b></p>
         </div>
     </div>
-
-      <div id="info-container"></div>
-    </div>
-    <!-- return to specific div -->
-<!-- <a href="#TAG-OUTSIDE" class="modal-overlay close-btn" aria-label="Close"></a> -->
-<div class="modal modal-animated--zoom-in" id="basic-modal">
-  <a href="#searchModalDialog" class="modal-overlay close-btn" aria-label="Close"></a>
-  <div class="modal-content" role="document">
-      <div class="modal-header"><a href="#components" class="u-pull-right" aria-label="Close"><span class="icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" class="svg-inline--fa fa-times fa-w-11 fa-wrapper" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512"><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg></span></a>
-          <div class="modal-title">Restaurant Recommender</div>
-      </div>
-      <div class="modal-body">
-        <div class="r">
-          <h3 class="font-alt font-light u-text-center">Our Recommendation for You!</h3></div>
-      <div class="space"></div>
-              
-                  <div class="tile__container">
-                      <p class="tile__title m-0">Stanley Lim</p>
-                      <p class="tile__subtitle m-0">slim@stanleylim.me</p>
-                  </div>
-                  <div class="tile__buttons">
-                      <button class="btn-success btn-small uppercase"><span class="icon"></span></button>
-                  </div>
-              </div>
-          </div>
-      </div>
-      <div class="modal-footer">
-          <div class="form-section u-text-right">
-              <a href="#components">
-                  <button class="btn btn-small u-inline-block">Save</button>
-              </a>
-              <a href="#components">
-                  <button class="btn-info btn-small u-inline-block">Next Recommendation</button>
-              </a>
-          </div>
-      </div>
   </div>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <!-- <div id="info-container"></div>
+    </div> -->
+    
 
 
 <div id="previous-recommendations">
