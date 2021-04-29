@@ -90,15 +90,8 @@ var populatePreviousRecs = function() {
     
 }
 
+
 // on submit, trigger function
 infoSubmitBtn.addEventListener("click", initializeApp);
 
-// on esc press close = accessibility
-document.addEventListener('keyup', function(e) {
-    if(e.key === "Escape") {
-        const modals = document.querySelectorAll('.modal-overlay');
-        for (const modal of modals) {
-            modal.click();
-        }
-    }
-});
+
