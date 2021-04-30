@@ -4,6 +4,7 @@ var selectRange = document.querySelector("#range-select");
 var infoSubmitBtn = document.querySelector("#submit-btn");
 var infoContainerEl = document.querySelector("#info-container");
 var previousRecommendations = document.querySelector("#previous-recommendations")
+var 
 
 // create function to trigger app functions
 var initializeApp = function (e) {
@@ -89,5 +90,6 @@ var populatePreviousRecs = function() {
     
 }
 
+
 // on submit, trigger function
-infoSubmitBtn.addEventListener("click", initializeApp);
+infoSubmitBtn.addEventListener("click", initializeApp)
