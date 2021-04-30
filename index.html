@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://kit.fontawesome.com/f2ca1fbec1.js" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.6.0/dist/cirrus.min.css"/> 
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
@@ -14,7 +13,7 @@
 
 
   <body> 
-        <div class="u-flex img-stretch" style="background: transparent; background-image: url(/Users/christicurrier/Desktop/Projects/Project01-RestaurantChooser/assets/images/meal_wood_background.jpeg); background-size: cover;">
+        <div class="u-flex img-stretch" style="background: transparent; background-image: url(./assets/images/meal_wood_background.jpeg); background-size: cover;">
           <div class="u-inline-flex"><span class="p-1 ml-6 white"></span></div>
     <div class="grid grid-gap-3 u-text-center">
       <div class="grid-c-8 grid-r-5" style="background:  transparent; border-radius: .25rem;">
@@ -22,22 +21,24 @@
       
     </div>
     
-        <div class="grid-c-8 grid-r-4" style="background:  transparent; border-radius: .25rem;">
+        <div class="grid-c-6 grid-r-4" style="background:  transparent; border-radius: .25rem;">
             <h3 class="uppercase color: white"> <b>Restaurant Randomizer</b></h3>
           
         </div>
+        <div class="grid-c-6 grid-r-4" style="background:  transparent; border-radius: .25rem;">
+          <h3 class="uppercase color: white"> <b></b></h3>
         
-        <div class="grid-c-7 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+      </div>
+        <div class="grid-c-6 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
             <h6><b> No more being hangry because you and your partner can't 
               decide on a restaurant. Let us choose for you!</b></p>
         </div>
-        <div class="grid-c-6 grid-r-12 menu u-pull-left w-40 pr-4" style="background: transparent; color: #fff; border-radius: .25rem;">
-            <h4><b>Saved Suggestions</b></p>
-        </div>
-        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b></b></p>
+        <div class="grid-c-6 grid-r-4" style="background:  transparent; border-radius: .25rem;">
+          <h3 class="uppercase color: white"> <b></b></h3>
+        
       </div>
-        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+
+        <div class="grid-c-6 grid-r-3 " style="background: transparent; color: #fff; border-radius: .25rem;">
           <h4><b><label for="user-address">Enter your address:</label></b>
             <input
           type="text"
@@ -46,8 +47,11 @@
           placeholder="2355 N Somewhere Ave City ST"
         />
         </div>
-        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
-            <label for="range-select">Find restaurants within...</label>
+        <div class="grid-c-6 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+          <h4><b></b></p>
+      </div>
+        <div class="grid-c-6 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+          <h4><b><label for="range-select">Find restaurants within...</label></b>
         <select name="range-select" id="range-select">
           <option disabled selected="true">Choose range</option>
           <option value="5">5 miles</option>
@@ -57,25 +61,26 @@
           <option value="25">25 miles</option>
         </select>
         <br/>
-        <div class="grid-c-5 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
+        <div class="grid-c-8 grid-r-4" style="background: transparent; color: #fff; border-radius: .25rem;">
           <h4><b></b></p>
         <button class="btn-animated" type="submit" id="submit-btn">Submit</button>
         </div>
-        
+
+<div id="previous-recommendations">
+        <div class="grid-c-12 grid-r-15" style="background: transparent; color: #fff; border-radius: .25rem;">
+          <h4><b>Saved Suggestions:</b></p>
+      </div>
+    </div>
+      <div class="grid-c-12 grid-r-15" style="background: transparent; color: #fff; border-radius: .25rem;">
+        <div id="info-container"></div>
+        <h4><b>We Recommend:</b></p>
+    </div>
+  </div>
         <div class="grid-c-12" style="background: transparent; color: #fff; border-radius: .25rem;">
-            <p><b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b></p>
+            <h6><p><b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b></p></h6>
         </div>
     </div>
   </div>
-      <div id="info-container"></div>
-    </div>
-    
-
-
-<div id="previous-recommendations">
-        
-    </div>
-
 
     <script src="./assets/js/script.js"></script>
   </body>
