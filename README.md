@@ -19,7 +19,7 @@ https://eezycade.github.io/Restaurant-Recommender/"
 
 ## Screenshot of Application
 
-img width="1401" alt="Screen Shot 2021-05-02 at 8 14 22 PM" src="https://use79948400/116838431-2da84500-ab83-11eb-820c-87305a254021.png
+<img width="1401" alt="Screen Shot 2021-05-02 at 8 14 22 PM" src="https://user-images.githubusercontent.com/79948400/116838840-c1c6dc00-ab84-11eb-9653-bae9499b45ee.png">
 
 ## Contributions
 
