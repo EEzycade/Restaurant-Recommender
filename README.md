@@ -2,7 +2,9 @@
 
 ## Purpose
 
-It's a discussion we've all had, be it with our family, partner, or spouse.
+AS A USER who does not know where to go for dinner
+I WANT TO enter my address and preferred travel distance
+SO THAT I can view recommendations for where to eat
 
 ## Built With
 
