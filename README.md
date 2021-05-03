@@ -1,4 +1,4 @@
-# Restaurant Recommender App
+# Hangry Hangry Hippos
 
 ## Purpose
 
