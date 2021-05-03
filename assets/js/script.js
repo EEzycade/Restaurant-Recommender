@@ -16,7 +16,7 @@ var initializeApp = function (e) {
 // create function to grab address from form and convert it into latitude and longitude
 var convertAddress = function () {
     console.log("working");
-    fetch("http://www.mapquestapi.com/geocoding/v1/address?key=2Kv1V0Uxm90yjYNLeEq2Yy0fnQ715KOG&location=" + userAddress.value)
+    fetch("https://www.mapquestapi.com/geocoding/v1/address?key=2Kv1V0Uxm90yjYNLeEq2Yy0fnQ715KOG&location=" + userAddress.value)
         .then(function (response) {
             return response.json();
         })
