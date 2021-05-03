@@ -25,4 +25,4 @@ https://eezycade.github.io/Restaurant-Recommender/"
 
 ## Contributions
 
-Cade Ellsworth, Christi Currier, Kyle Berta ©2021r-images.githubusercontent.com/
+Cade Ellsworth, Christi Currier, Kyle Berta ©2021
