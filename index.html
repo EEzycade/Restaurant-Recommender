@@ -1,90 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.6.0/dist/cirrus.min.css"/> 
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cirrus-ui@0.6.0/dist/cirrus.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/b4c3a1cd14.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/styles/style.css" />
-    <title>Restaurant Randomizer</title>
-  </head>
+    <title>Hangry Hangry Hippos</title>
+</head>
 
 
-  <body> 
-        <div class="u-flex img-stretch" style="background: transparent; background-image: url(./assets/images/meal_wood_background.jpeg); background-size: cover;">
-          <div class="u-inline-flex"><span class="p-1 ml-6 white"></span></div>
-    <div class="grid grid-gap-3 u-text-center">
-      <div class="grid-c-8 grid-r-5" style="background:  transparent; border-radius: .25rem;">
-        <h1 class="uppercase color: white"> <b></b></h1>
-      
-    </div>
-    
-        <div class="grid-c-6 grid-r-4" style="background:  transparent; border-radius: .25rem;">
-            <h3 class="uppercase color: white"> <b>Restaurant Randomizer</b></h3>
-          
+<body>
+
+    <div class="grid grid-gap-4 u-text-center">
+
+        <div class="grid-c-12 grid-r-3" style="background: transparent; border-radius: .45rem; color: #EE2D3E;">
+            <header class="site-header">
+                <h1>Hangry Hangry Hippos</h1>
+                <i class="fas fa-hippo fa-3x logo"></i>
+                <i class="fas fa-hippo fa-3x fa-flip-horizontal logo"></i>
+            </header>
         </div>
-        <div class="grid-c-6 grid-r-4" style="background:  transparent; border-radius: .25rem;">
-          <h3 class="uppercase color: white"> <b></b></h3>
+
+        <div class="grid-c-12 grid-r-5" style="background: transparent; color: #2B2D2F; padding: 20px; padding-left: 50px; padding-right: 50px;">
+            <h2 class="blurb">It’s date night! You and your partner can finally relax. Until.. the dreaded question:
+                “What do you want to eat?” And the even scarier response: “I don’t know, what do you want to eat?”
+                Suddenly, your night of domestic tranquility has been upended by endless bickering and deliberation. In
+                your desperation you cry out: “If only there was a website that could pick for us!”. Well you’re in
+                luck. Here at Hangry Hangry Hippos, we strive to make date night easier for indecisive couples
+                everywhere. Simply type in your address and select your desired range, and you will get a tailored
+                recommendation. Bon appétit!</h2>
+        </div>
+
+        <div class="grid-c-2 grid-r-3"></div>
+
+        <div class="grid-c-8 grid-r-3 "
+            style="border: 4px solid #EE2D3E; box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); background: transparent; padding-top: 20px; padding-left: 60px; padding-right: 60px; color: #fff; border-radius: .25rem; background-image: url(https://media.istockphoto.com/photos/dark-wood-plank-background-picture-id599752764?k=6&m=599752764&s=170667a&w=0&h=Ybg37oGPAn7NAKqCYuk-wY6LX_NYyNZ37Tu28aouZsk=);">
+            <h3><label for="user-address">Enter your address:</label></h3>
+            <input type="text" id="user-address" name="user-address" placeholder="Format: 2355 N Somewhere Ave City ST" />
+            <h3><label for="range-select">Find restaurants within...</label></h3>
+            <select name="range-select" id="range-select">
+                <option disabled selected="true">Choose range</option>
+                <option value="5">5 miles</option>
+                <option value="10">10 miles</option>
+                <option value="15">15 miles</option>
+                <option value="20">20 miles</option>
+                <option value="25">25 miles</option>
+            </select>
+
+            <br />
+            <br />
+            <button type="submit" id="submit-btn" class="btn-primary">Submit</button>
+        </div>
+
+        <div class="grid-c-2 grid-r-3"></div>
+
+        <div class="grid-c-12 grid-r-1" style="background: transparent; color: #2B2D2F; border-radius: .25rem;">
+            <h4><b>We Recommend:</b></h4>
+        </div> 
+
+        <div class="grid-c-3 gird-r-4"></div>
         
-      </div>
-        <div class="grid-c-6 grid-r-2" style="background: transparent; color: #fff; border-radius: .25rem;">
-            <h6><b> No more being hangry because you and your partner can't 
-              decide on a restaurant. Let us choose for you!</b></p>
+        <div class="grid-c-6 grid-r-4">
+            <div id="info-container"></div>
         </div>
-        <div class="grid-c-6 grid-r-3" style="background:  transparent; border-radius: .25rem;">
-          <h3 class="uppercase color: white"> <b></b></h3>
+
+        <div class="grid-c-3 gird-r-4"></div>
+
+        <div class="grid-c-12 grid-r-1" style="background: transparent; color: #2B2D2F; border-radius: .25rem;">
+            <h4>Saved Suggestions:</h4>
+        </div>
+
+        <div class="grid-c-4 gird-r-4"></div>
         
-      </div>
-
-        <div class="grid-c-6 grid-r-3 " style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b><label for="user-address">Enter your address:</label></b>
-            <input
-          type="text"
-          id="user-address"
-          name="user-address"
-          placeholder="2355 N Somewhere Ave City ST"
-        />
-        </div>
-        <div class="grid-c-6 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b></b></p>
-      </div>
-        <div class="grid-c-6 grid-r-3" style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b><label for="range-select">Find restaurants within...</label></b>
-        <select name="range-select" id="range-select">
-          <option disabled selected="true">Choose range</option>
-          <option value="5">5 miles</option>
-          <option value="10">10 miles</option>
-          <option value="15">15 miles</option>
-          <option value="20">20 miles</option>
-          <option value="25">25 miles</option>
-        </select>
-        <br/>
-        <div class="grid-c-8 grid-r-4" style="background: transparent; color: #fff; border-radius: .25rem;">
-          <h4><b></b></p>
-        <button class="btn-animated" type="submit" id="submit-btn">Submit</button>
+        <div class="grid-c-4 grid-r-4">
+            <div id="previous-recommendations"></div>
         </div>
 
+        <div class="grid-c-4 gird-r-4"></div>
 
-        <div class="grid-c-5 grid-r-4" style="background: transparent; color: #FC1302; border-radius: .25rem;">
-          <h4><b>Saved Suggestions:</b></p>
-            <div class="saved-text" id="previous-recommendations"></div>
-      </div>
-    
-      <div class="grid-c-7 grid-r-4" style="background: transparent; color: #FC1302; border-radius: .25rem;">
-        <h4><b>We Recommend:</b></h4>
-        <div class="rec-text" id="info-container"></div>
     </div>
-  
-        <div class="grid-c-12" style="background: transparent; color: #fff; border-radius: .25rem;">
-            <h6><p><b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b></p></h6>
-        </div>
-    </div>
-  </div>
 
-  <!-- <div id="previous-recommendations"></div>
-  <div id="info-container"></div> -->
+    <footer class="footer">
+
+        <h5>
+            <b>Cade Ellsworth, Christi Currier, Kyle Berta ©2021</b>
+        </h5>
+
+    </footer>
+
     <script src="./assets/js/script.js"></script>
-  </body>
+
+</body>
+
 </html>

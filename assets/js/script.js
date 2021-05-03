@@ -9,24 +9,24 @@ var previousRecommendations = document.querySelector("#previous-recommendations"
 var initializeApp = function (e) {
     e.preventDefault();
     infoContainerEl.innerHTML = "";
-    // convertAddress();
+    convertAddress();
     getRestaurants();
 }
 
 // create function to grab address from form and convert it into latitude and longitude
-// var convertAddress = function () {
-//     console.log("working");
-//     fetch('http://api.positionstack.com/v1/forward?access_key=ee94f47a6f59bccccb63518da296f930&query=' + userAddress.value + '&output=json')
-//         .then(function (response) {
-//             return response.json();
-//         })
-//         .then(function (response) {
-//             console.log(response);
-//             // put latitude and longitude into local storage
-//             localStorage.setItem("latitude", response.data[0].latitude);
-//             localStorage.setItem("longitude", response.data[0].longitude);
-//         });
-// }
+var convertAddress = function () {
+    console.log("working");
+    fetch("http://www.mapquestapi.com/geocoding/v1/address?key=2Kv1V0Uxm90yjYNLeEq2Yy0fnQ715KOG&location=" + userAddress.value)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response.results[0].locations[0].displayLatLng.lat);
+            // put latitude and longitude into local storage
+            localStorage.setItem("latitude", response.results[0].locations[0].displayLatLng.lat);
+            localStorage.setItem("longitude", response.results[0].locations[0].displayLatLng.lng);
+        });
+}
 
 // create function to grab range + preferred cuisine, make a fetch call using range, cuisine, and lat/lon
 var getRestaurants = function () {
@@ -34,7 +34,7 @@ var getRestaurants = function () {
     var geoLat = localStorage.getItem("latitude");
     var geoLon = localStorage.getItem("longitude");
     // fetch data
-    fetch("https://api.documenu.com/v2/restaurants/search/geo?key=337e793c7092becc4d3298568d6964ac&lat=33.445943&lon=-111.774751&distance=" + selectRange.value + "&fullmenu")
+    fetch("https://api.documenu.com/v2/restaurants/search/geo?key=ea209cb4b01eac83d95edb06c142fae8&lat=" + geoLat + "&lon=" + geoLon + "&distance=" + selectRange.value + "&fullmenu")
         .then(function (response) {
             return response.json();
         })
@@ -45,17 +45,25 @@ var getRestaurants = function () {
             console.log(randomChoice);
             var choice = data.data[randomChoice];
             // display restaurant info on page
-            var restaurantName = document.createElement("h2");
+            var recDivEl = document.createElement("div");
+            recDivEl.setAttribute("class", "recommendation");
+            var restaurantName = document.createElement("h4");
+            restaurantName.setAttribute("class", "card-title");
             restaurantName.innerHTML = choice.restaurant_name;
-            var restaurantPhone = document.createElement("h2");
+            var restaurantType = document.createElement("h4");
+            restaurantType.innerHTML = choice.cuisines;
+            var restaurantPhone = document.createElement("h4");
             restaurantPhone.innerHTML = choice.restaurant_phone
-            var restaurantAddress = document.createElement("h2");
+            var restaurantAddress = document.createElement("h4");
             restaurantAddress.innerHTML = choice.address.street;
             var saveRecBtn = document.createElement("button");
-            saveRecBtn.innerHTML = "Save this recommendation for later";
+            saveRecBtn.setAttribute("class", "save-btn");
+            saveRecBtn.innerHTML = "<h5>Save<i class='fas fa-bookmark'></i></h5>";
             var nextRecBtn = document.createElement("button");
-            nextRecBtn.innerHTML = "Next recommendation";
-            infoContainerEl.append(restaurantName, restaurantPhone, restaurantAddress, saveRecBtn, nextRecBtn);
+            nextRecBtn.setAttribute("class", "next-btn");
+            nextRecBtn.innerHTML = "<h5>Next<i class='fas fa-angle-right fa-lg'></i></h5>";
+            recDivEl.append(restaurantName, restaurantType, restaurantPhone, restaurantAddress, saveRecBtn, nextRecBtn);
+            infoContainerEl.appendChild(recDivEl);
             var recommendationObject = {
                 name: choice.restaurant_name,
                 phone: choice.restaurant_phone,
@@ -78,11 +86,12 @@ var searchAgain = function() {
 var populatePreviousRecs = function() {
     var recommendationObject = JSON.parse(localStorage.getItem("previousRec"));
     var recommendationCard = document.createElement("div");
-    var previousRecName = document.createElement("h3");
+    recommendationCard.setAttribute("class", "saved-recommendation");
+    var previousRecName = document.createElement("h4");
     previousRecName.innerHTML = recommendationObject.name;
-    var previousRecPhone = document.createElement("h3");
+    var previousRecPhone = document.createElement("h4");
     previousRecPhone.innerHTML = recommendationObject.phone;
-    var previousRecAddress = document.createElement("h3");
+    var previousRecAddress = document.createElement("h4");
     previousRecAddress.innerHTML = recommendationObject.address;
     recommendationCard.append(previousRecName, previousRecPhone, previousRecAddress);
     previousRecommendations.appendChild(recommendationCard);
