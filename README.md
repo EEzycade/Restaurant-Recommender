@@ -2,9 +2,9 @@
 
 ## Purpose
 
-AS A USER who does not know where to go for dinner
-I WANT TO enter my address and preferred travel distance
-SO THAT I can view recommendations for where to eat
+- AS A USER who does not know where to go for dinner
+- I WANT TO enter my address and preferred travel distance
+- SO THAT I can view recommendations for where to eat
 
 ## Built With
 
@@ -17,7 +17,7 @@ SO THAT I can view recommendations for where to eat
 
 ## Deployed Application
 
-https://eezycade.github.io/Restaurant-Recommender/"
+https://eezycade.github.io/Restaurant-Recommender/
 
 ## Screenshot of Application
 
