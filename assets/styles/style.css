@@ -1,20 +1,16 @@
 .recommendation {
-    /* background-image: url(https://media.istockphoto.com/photos/dark-wood-plank-background-picture-id599752764?k=6&m=599752764&s=170667a&w=0&h=Ybg37oGPAn7NAKqCYuk-wY6LX_NYyNZ37Tu28aouZsk=); */
     background-color: #2E3338;
     color: #fff;
     border-radius: 15px;
-    
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.87);
     padding: 15px;
     border-radius: .45rem;
 }
 
 .saved-recommendation {
-    /* background-image: url(https://media.istockphoto.com/photos/dark-wood-plank-background-picture-id599752764?k=6&m=599752764&s=170667a&w=0&h=Ybg37oGPAn7NAKqCYuk-wY6LX_NYyNZ37Tu28aouZsk=); */
     background-color: #2E3338;
     color: #fff;
     border-radius: .45rem;
-    
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.87);
     margin-bottom: 20px;
     font-size: 10px;
@@ -31,12 +27,10 @@
     background-color: #2E3338;
     padding: 15px;
     color: #fff;
-    
 }
 
 .recommendation .save-btn {
     margin-right: 10px;
-    
 }
 
 .recommendation .save-btn h5 {
